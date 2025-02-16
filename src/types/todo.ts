@@ -1,5 +1,5 @@
 export type Todo = {
-    id?: string;
+    id: string;
     register_no: string;
     name: string;
     total_mark: number | string;

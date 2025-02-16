@@ -9,9 +9,11 @@ type AddTodoProps = {
 
 const AddTodo = ({ addTodo }: AddTodoProps) => {
   const [formData, setFormData] = useState<Todo>({
+    id:"",
     register_no: "",
     name: "",
-    total_mark: "",
+    total_mark: 0,
+    completed: false
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +31,7 @@ const AddTodo = ({ addTodo }: AddTodoProps) => {
       return toast.error("Please fill fields");
     }
     addTodo(formData.register_no, formData.name, Number(formData.total_mark));
-    setFormData({ register_no: "", name: "", total_mark: "" });
+    setFormData({ id: "", register_no: "", name: "", total_mark: 0, completed: false });
   };
 
   return (
